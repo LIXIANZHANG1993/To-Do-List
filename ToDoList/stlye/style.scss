@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//因為button包著i，避免游標案到i，所以在此設定
+i {
+  pointer-events: none;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(97, 173, 113), rgb(75, 127, 185));
+}
+
+header {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: rgb(253, 253, 253);
+    font-size: 3rem;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input,
+  button {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+    margin: 0.1rem;
+  }
+
+  input[type="number"] {
+    width: 80px;
+    text-align: center;
+  }
+
+  /* Chrome, Safari, Edge, Opera to Hide Arrows From Input Number*/
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox to Hide Arrows From Input Number*/
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  button {
+    /*改變游標圖示 */
+    cursor: pointer;
+    background-color: rgba(80, 87, 88, 0.767);
+    color: azure;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.todo {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    margin: 0.2rem 0rem;
+    transition: all 0.5s ease;
+
+    p {
+      background-color: azure;
+      color: black;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.75rem;
+    }
+
+    p.todo-text {
+      width: 50%;
+    }
+    p.todo-time {
+      width: 20%;
+      text-align: center;
+    }
+
+    button {
+      padding: 0.25rem 0.5rem;
+      font-size: 32.1px;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+
+    button.complete {
+      background-color: rgb(98, 209, 98);
+    }
+
+    button.trash {
+      background-color: rgb(230, 70, 70);
+    }
+  }
+}
+
+div.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem;
+  button {
+    /*改變游標圖示 */
+    cursor: pointer;
+    background-color: rgba(80, 87, 88, 0.767);
+    color: azure;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+  }
+}
+
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+}
+
+//scss定義style 做出顯示代辦事項動畫
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
